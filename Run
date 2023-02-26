@@ -1,0 +1,21 @@
+import pyautogui
+import keyboard
+
+
+file1 = open("key.txt", "r")
+
+while True:
+    try:  
+        if keyboard.is_pressed('f1'): 
+            while True:
+                line = file1.readline()
+                if not line:
+                    break
+                pyautogui.press('enter')
+                pyautogui.hotkey('ctrl','shift','home') 
+                pyautogui.write(line)
+                pyautogui.press('enter') 
+                file1.close
+            break 
+    except:
+        break 
